@@ -1,4 +1,6 @@
 sudo: required
+language: generic
+
 services:
   - docker
 
@@ -16,4 +18,6 @@ deploy:
   bucket_name : "elasticbeanstalk-eu-central-1-925075551347"
   bucket_path: "DockerWeb"
   on:
-  branch: master
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_KEY
