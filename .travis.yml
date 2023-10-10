@@ -7,3 +7,13 @@ before_install:
 
 script:
   - docker run -e CI=true huck-ford/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: eu-central-1
+  app: "DockerWeb"
+  env: "DockerWeb-env"
+  bucket_name : "elasticbeanstalk-eu-central-1-925075551347"
+  bucket_path: "DockerWeb"
+  on:
+  branch: master
